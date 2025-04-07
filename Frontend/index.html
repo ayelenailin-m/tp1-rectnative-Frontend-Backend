@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Personalizado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de saludos!</h1>
+
+        <input type="text" id="nombreInput" placeholder="Ingresá tu nombre" />
+        <button id="btnSaludar">Saludar</button>
+
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        const boton = document.getElementById('btnSaludar');
+        const input = document.getElementById('nombreInput');
+        const mensaje = document.getElementById('mensaje');
+
+        boton.addEventListener('click', async () => {
+            const nombre = input.value.trim();
+            if (!nombre) {
+                mensaje.textContent = "Por favor ingresá un nombre.";
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3000/saludo/${nombre}`);
+                const texto = await response.text();
+                mensaje.textContent = texto;
+            } catch (error) {
+                mensaje.textContent = "Error al conectar con el servidor.";
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>

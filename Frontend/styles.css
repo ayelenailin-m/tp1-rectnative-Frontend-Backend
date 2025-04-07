@@ -1,0 +1,98 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #4a6fa5;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Estilos para el input */
+#nombreInput {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5ee;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+#nombreInput:focus {
+    outline: none;
+    border-color: #4a6fa5;
+}
+
+/* Estilos para el botón */
+#btnSaludar {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btnSaludar:hover {
+    background-color: #3a5a8c;
+}
+
+#btnSaludar:active {
+    transform: scale(0.98);
+}
+
+/* Estilos para el mensaje */
+#mensaje {
+    margin-top: 25px;
+    padding: 15px;
+    min-height: 60px;
+    background-color: #f0f4f9;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+#mensaje:not(:empty) {
+    border-left: 4px solid #4a6fa5;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
